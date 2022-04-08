@@ -4,6 +4,11 @@ from os import environ
 import requests
 import uuid
 
+
+def get_secret():
+    return uuid.uuid4().hex
+
+
 CHANNEL_ID = environ['CHANNEL_ID']
 CHANNEL_SECRET = environ['CHANNEL_SECRET']
 CALLBACK_URL = environ.get('CALLBACK_URL', 'http://localhost:8080/callback')
@@ -11,10 +16,7 @@ LINE_LOGIN_URL = environ.get('LINE_LOGIN_URL', 'https://access.line.me/oauth2/v2
 AUTH_TOKEN_URL = environ.get('AUTH_TOKEN_URL', 'https://api.line.me/oauth2/v2.1/token')
 LINE_PROFILE_URL = environ.get('LINE_PROFILE_URL', 'https://api.line.me/oauth2/v2.1/verify')
 SCOPE = environ.get('LINE_LOGIN_URL', 'openid')
-
-
-def get_secret():
-    return uuid.uuid4().hex
+APP_SECRET = environ.get('APP_SECRET', get_secret())
 
 
 def urlencode(string):
@@ -22,7 +24,7 @@ def urlencode(string):
 
 
 login_test_app = Flask(__name__, template_folder='html')
-login_test_app.secret_key = environ.get('APP_SECRET', get_secret())
+login_test_app.secret_key = APP_SECRET
 
 
 @login_test_app.route('/')
