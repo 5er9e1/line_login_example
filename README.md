@@ -6,8 +6,7 @@
 
 - [Line login flow and explanation](https://developers.line.biz/en/docs/line-login/integrate-line-login/)
 - [How to get profile information](https://developers.line.biz/en/docs/line-login/verify-id-token)
-- [Profile information payload explanation](https://developers.line.biz/en/docs/line-login/verify-id-token/#payload)
-- 
+- [Profile information payload explanation](https://developers.line.biz/en/docs/line-login/verify-id-token/#payload) 
 
 ### Environment variables
 
