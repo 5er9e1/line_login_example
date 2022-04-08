@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>You are {{ user_name }}</h1>
+<img src="{{ user_picture }}" style="width:150px;height:150px"></img>
+<table style="width:50%">
+  <tr>
+    <td>Line client ID</td>
+    <td><code>{{ client_id }}</code></td>
+  </tr>
+  <tr>
+    <td>App channel ID</td>
+    <td><code>{{ channel_id }}</code></td>
+  </tr>
+  <tr>
+    <td>Token generated time</td>
+    <td><code>{{ gen_timestamp }}</code></td>
+  </tr>
+  <tr>
+    <td>Token expiration time (minutes)</td>
+    <td><code>{{ (exp_timestamp - gen_timestamp) / 60 }}</code></td>
+  </tr>
+  <tr>
+    <td>Login provider</td>
+    <td><code>{{ login_provider }}</code></td>
+  </tr>
+</table>
+</body>
+</html>
