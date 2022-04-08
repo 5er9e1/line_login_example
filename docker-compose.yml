@@ -1,0 +1,17 @@
+services:
+  webapp:
+    image: webapp_uwsgi:1.0
+    container_name: webapp
+    build:
+      context: .
+    ports:
+      - "8080:8080"
+    environment:
+      - CHANNEL_ID
+      - CHANNEL_SECRET
+      - CALLBACK_URL
+      - LINE_LOGIN_URL
+      - AUTH_TOKEN_URL
+      - LINE_PROFILE_URL
+      - SCOPE
+      - APP_SECRET
