@@ -4,8 +4,6 @@ from os import environ
 import requests
 import uuid
 
-from app_orig import PROFILE_URL
-
 CHANNEL_ID = environ['CHANNEL_ID']
 CHANNEL_SECRET = environ['CHANNEL_SECRET']
 CALLBACK_URL = environ.get('CALLBACK_URL', 'http://localhost:8080/callback')
@@ -80,7 +78,7 @@ def callback():
     }
 
     r = requests.post(
-        PROFILE_URL,
+        LINE_PROFILE_URL,
         data=get_profile_payload,
         headers={'Content-Type': 'application/x-www-form-urlencoded'}
     )
